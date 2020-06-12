@@ -64,7 +64,7 @@
               <input id="novaTransacao_Preco" type="number" class="form-control" placeholder="Preço..." required>
               <input id="novaTransacao_Quantidade" type="number" class="form-control" placeholder="Quantidade..." required>
               <input id="novaTransacao_Info" type="text" class="form-control" placeholder="Informações Adicionais..." required>
-              <input type="submit" hidden="">
+              <input type="submit" class="btn btn-success">
             </form>
             <table id="transacoes">
                 <thead>
@@ -76,6 +76,7 @@
                         <th>Preço</th>
                         <th>Quantidade</th>
                         <th>Informações Adicionais</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody class="taskTemplate">
@@ -87,6 +88,7 @@
                         <td class="preco"></td>
                         <td class="quantidade"></td>
                         <td class="info_adicionais"></td>
+                        <td class='button'></td>
                     </tr>
                 </tbody>
             </table>

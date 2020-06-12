@@ -106,10 +106,11 @@ App = {
             $newTaskTemplate.find('.preco').html(preco)
             $newTaskTemplate.find('.quantidade').html(quantidade)
             $newTaskTemplate.find('.info_adicionais').html(info_adicionais)
-            // $newTaskTemplate.find('input')
-            //             .prop('name', id)
-            //             .prop('checked', finalizada)
-                        // .on('click', App.toggleCompleted)
+            $newTaskTemplate.find('.button').html("<button id='"+id+"'  class='btn btn-success' type='button'>Finalizar</button>")
+            $newTaskTemplate.find('button')
+                        .prop('id', id)
+                        .prop('disabled', finalizada)
+                        .on('click', App.Finalizar)
     
             // Put the task in the correct list
             if (finalizada) {
@@ -134,6 +135,14 @@ App = {
         
         await App.transacoes.criarTransacao(vendedor, comprador, produto, preco,
             quantidade, info_adicionais)
+        window.location.reload()
+    },
+
+    Finalizar: async (e) => {
+        App.setLoading(true)
+        const transacaoId = e.target.id
+        await App.transacoes.Finalizar(transacaoId)
+        $(transacaoId).prop('disabled', true)
         window.location.reload()
     },
     
