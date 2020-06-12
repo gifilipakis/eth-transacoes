@@ -18,32 +18,46 @@
     <![endif]-->
 
     <style>
-      main {
+    main {
         margin-top: 60px;
-      }
+    }
 
-      #content {
+    #content {
         display: none;
-      }
+    }
 
-      form {
-        width: 350px;
-        margin-bottom: 10px;
-      }
+    form {
+        width: auto;
+        display: flex;
+    }
 
-      ul {
-        margin-bottom: 0px;
-      }
+    #transacoes, #transacoesFinalizadas {
+        width: 100%;
+        margin: 20px 0;
+    }
 
-      #transacoesfinalizadas .content {
-        color: grey;
-        text-decoration: line-through;
-      }
+    #transacoes thead, #transacoesFinalizadas thead {
+        background-color: rgb(49, 49, 49);
+        color: white;
+        text-align: center;
+    }
+
+    #transacoes tbody, #transacoesFinalizadas tbody  {
+        text-align: center;
+    }
+
+    #transacoes tbody tr:nth-child(even), #transacoesFinalizadas tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    h3 {
+        margin-top: 50px;
+    }
     </style>
   </head>
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://www.dappuniversity.com/free-download" target="_blank">Dapp University | Todo List</a>
+      <span class="navbar-brand col-sm-3 col-md-2 mr-0">Projeto Blockchain | SDI</span>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap d-none d-sm-none d-sm-block">
           <small><a class="nav-link" href="#"><span id="account"></span></a></small>
@@ -53,60 +67,73 @@
     <div class="container-fluid">
       <div class="row">
         <main role="main" class="col-lg-12 d-flex justify-content-center">
-          <div id="loader" class="text-center">
-            <p class="text-center">Carregando...</p>
-          </div>
-          <div id="content">
-            <form onSubmit="App.criarTransacao(); return false;">
-              <input id="novaTransacao_Vendedor" type="text" class="form-control" placeholder="Vendedor..." required>
-              <input id="novaTransacao_Comprador" type="text" class="form-control" placeholder="Comprador..." required>
-              <input id="novaTransacao_Produto" type="text" class="form-control" placeholder="Produto..." required>
-              <input id="novaTransacao_Preco" type="number" class="form-control" placeholder="Preço..." required>
-              <input id="novaTransacao_Quantidade" type="number" class="form-control" placeholder="Quantidade..." required>
-              <input id="novaTransacao_Info" type="text" class="form-control" placeholder="Informações Adicionais..." required>
-              <input type="submit" class="btn btn-success">
-            </form>
-            <table id="transacoes">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Vendedor</th>
-                        <th>Comprador</th>
-                        <th>Produto</th>
-                        <th>Preço</th>
-                        <th>Quantidade</th>
-                        <th>Informações Adicionais</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody class="taskTemplate">
-                    <tr>
-                        <td class="id"></td>
-                        <td class="comprador"></td>
-                        <td class="vendedor"></td>
-                        <td class="produto"></td>
-                        <td class="preco"></td>
-                        <td class="quantidade"></td>
-                        <td class="info_adicionais"></td>
-                        <td class='button'></td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- <ul id="transacoes" class="list-unstyled">
-              <div class="taskTemplate" class="checkbox" style="display: none">
-                <li>
-                  <input type="checkbox" />
-                  <span class="content">Lista de Transações...</span>
-                </li>
-                <li>
-                    <span>id</span> | <span>Vendedor</span> | <span>Comprador</span> | <span>Produto</span> | <span>Preço</span> | 
-                    <span>Quantidade</span> | <span>Informações Adicionais</span>
-                </li>
-              </div>
-            </ul> -->
-            <ul id="transacoesFinalizadas" class="list-unstyled">
-            </ul>
-          </div>
+            <div id="loader" class="text-center">
+                <p class="text-center">Carregando...</p>
+            </div>
+            <div id="content">
+                <form onSubmit="App.criarTransacao(); return false;">
+                <input id="novaTransacao_Vendedor" type="text" class="form-control" placeholder="Vendedor..." required>
+                <input id="novaTransacao_Comprador" type="text" class="form-control" placeholder="Comprador..." required>
+                <input id="novaTransacao_Produto" type="text" class="form-control" placeholder="Produto..." required>
+                <input id="novaTransacao_Preco" type="number" class="form-control" placeholder="Preço..." required>
+                <input id="novaTransacao_Quantidade" type="number" class="form-control" placeholder="Quantidade..." required>
+                <input id="novaTransacao_Info" type="text" class="form-control" placeholder="Informações Adicionais..." required>
+                <input type="submit" class="btn btn-success">
+                </form>
+                <table id="transacoes">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Vendedor</th>
+                            <th>Comprador</th>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Informações Adicionais</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="taskTemplate">
+                            <td class="id"></td>
+                            <td class="comprador"></td>
+                            <td class="vendedor"></td>
+                            <td class="produto"></td>
+                            <td class="preco"></td>
+                            <td class="quantidade"></td>
+                            <td class="info_adicionais"></td>
+                            <td class='button'></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Transações Finalizadas</h3>
+                <table id="transacoesFinalizadas">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Vendedor</th>
+                            <th>Comprador</th>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Informações Adicionais</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="id"></td>
+                            <td class="comprador"></td>
+                            <td class="vendedor"></td>
+                            <td class="produto"></td>
+                            <td class="preco"></td>
+                            <td class="quantidade"></td>
+                            <td class="info_adicionais"></td>
+                            <td class='button'></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </main>
       </div>
     </div>
