@@ -3,8 +3,56 @@
   "abi": [
     {
       "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "transacoes",
+      "outputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "comprador",
+          "type": "string"
+        },
+        {
+          "name": "vendedor",
+          "type": "string"
+        },
+        {
+          "name": "produto",
+          "type": "string"
+        },
+        {
+          "name": "preco",
+          "type": "uint256"
+        },
+        {
+          "name": "quantidade",
+          "type": "uint256"
+        },
+        {
+          "name": "info_adicionais",
+          "type": "string"
+        },
+        {
+          "name": "finalizada",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x4c0e5a4d"
+    },
+    {
+      "constant": true,
       "inputs": [],
-      "name": "taskCount",
+      "name": "qntdTransacoes",
       "outputs": [
         {
           "name": "",
@@ -14,23 +62,65 @@
       "payable": false,
       "stateMutability": "view",
       "type": "function",
-      "signature": "0xb6cb58a5"
+      "signature": "0x4c2bdd88"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "signature": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_comprador",
+          "type": "string"
+        },
+        {
+          "name": "_vendedor",
+          "type": "string"
+        },
+        {
+          "name": "_produto",
+          "type": "string"
+        },
+        {
+          "name": "_preco",
+          "type": "uint256"
+        },
+        {
+          "name": "_quantidade",
+          "type": "uint256"
+        },
+        {
+          "name": "_info_adicionais",
+          "type": "string"
+        }
+      ],
+      "name": "criarTransacao",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x0e283d69"
     }
   ],
-  "bytecode": "0x608060405260008055348015601357600080fd5b50609e806100226000396000f3fe608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063b6cb58a5146044575b600080fd5b348015604f57600080fd5b506056606c565b6040518082815260200191505060405180910390f35b6000548156fea165627a7a7230582018f40a2c33233bd19b9eea2b5f2eae63c8ed9e62e365ec789b533cecbaaeb1a80029",
-  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063b6cb58a5146044575b600080fd5b348015604f57600080fd5b506056606c565b6040518082815260200191505060405180910390f35b6000548156fea165627a7a7230582018f40a2c33233bd19b9eea2b5f2eae63c8ed9e62e365ec789b533cecbaaeb1a80029",
-  "sourceMap": "25:54:1:-;;;75:1;51:25;;25:54;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:54:1;;;;;;;",
-  "deployedSourceMap": "25:54:1:-;;;;;;;;;;;;;;;;;;;;;;;;51:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;51:25:1;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\n\ncontract Transacoes {\n    uint public taskCount = 0;\n}",
+  "bytecode": "0x60806040526000805534801561001457600080fd5b5061012e6040805190810160405280601181526020017f4e6f6d6520646f20436f6d707261646f720000000000000000000000000000008152506040805190810160405280601081526020017f4e6f6d6520646f2056656e6465646f72000000000000000000000000000000008152506040805190810160405280600f81526020017f4e6f6d6520646f2050726f6475746f0000000000000000000000000000000000815250600080606060405190810160405280602481526020017f496e666f726d61c3a7c3b5657320696d706f7274616e7465732061646963696f81526020017f6e61697300000000000000000000000000000000000000000000000000000000815250610133640100000000026401000000009004565b6102cb565b600080546001908101808355604080516101008101825282815260208082018c81528284018c9052606083018b9052608083018a905260a0830189905260c0830188905260e0830187905293865284815291909420845181559151805192936101a493908501929190910190610230565b50604082015180516101c0916002840191602090910190610230565b50606082015180516101dc916003840191602090910190610230565b506080820151600482015560a0820151600582015560c0820151805161020c916006840191602090910190610230565b5060e091909101516007909101805460ff1916911515919091179055505050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061027157805160ff191683800117855561029e565b8280016001018555821561029e579182015b8281111561029e578251825591602001919060010190610283565b506102aa9291506102ae565b5090565b6102c891905b808211156102aa57600081556001016102b4565b90565b610911806102da6000396000f3fe6080604052600436106100565763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630e283d69811461005b5780634c0e5a4d146102b15780634c2bdd88146104a5575b600080fd5b34801561006757600080fd5b506102af600480360360c081101561007e57600080fd5b81019060208101813564010000000081111561009957600080fd5b8201836020820111156100ab57600080fd5b803590602001918460018302840111640100000000831117156100cd57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561012057600080fd5b82018360208201111561013257600080fd5b8035906020019184600183028401116401000000008311171561015457600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092959493602081019350359150506401000000008111156101a757600080fd5b8201836020820111156101b957600080fd5b803590602001918460018302840111640100000000831117156101db57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929584359560208601359591945092506060810191506040013564010000000081111561023a57600080fd5b82018360208201111561024c57600080fd5b8035906020019184600183028401116401000000008311171561026e57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506104cc945050505050565b005b3480156102bd57600080fd5b506102db600480360360208110156102d457600080fd5b50356105c9565b60405180898152602001806020018060200180602001888152602001878152602001806020018615151515815260200185810385528c818151815260200191508051906020019080838360005b83811015610340578181015183820152602001610328565b50505050905090810190601f16801561036d5780820380516001836020036101000a031916815260200191505b5085810384528b5181528b516020918201918d019080838360005b838110156103a0578181015183820152602001610388565b50505050905090810190601f1680156103cd5780820380516001836020036101000a031916815260200191505b5085810383528a5181528a516020918201918c019080838360005b838110156104005781810151838201526020016103e8565b50505050905090810190601f16801561042d5780820380516001836020036101000a031916815260200191505b50858103825287518152875160209182019189019080838360005b83811015610460578181015183820152602001610448565b50505050905090810190601f16801561048d5780820380516001836020036101000a031916815260200191505b509c5050505050505050505050505060405180910390f35b3480156104b157600080fd5b506104ba610844565b60408051918252519081900360200190f35b600080546001908101808355604080516101008101825282815260208082018c81528284018c9052606083018b9052608083018a905260a0830189905260c0830188905260e08301879052938652848152919094208451815591518051929361053d9390850192919091019061084a565b506040820151805161055991600284019160209091019061084a565b506060820151805161057591600384019160209091019061084a565b506080820151600482015560a0820151600582015560c082015180516105a591600684019160209091019061084a565b5060e091909101516007909101805460ff1916911515919091179055505050505050565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156106655780601f1061063a57610100808354040283529160200191610665565b820191906000526020600020905b81548152906001019060200180831161064857829003601f168201915b50505060028085018054604080516020601f60001961010060018716150201909416959095049283018590048502810185019091528181529596959450909250908301828280156106f75780601f106106cc576101008083540402835291602001916106f7565b820191906000526020600020905b8154815290600101906020018083116106da57829003601f168201915b5050505060038301805460408051602060026001851615610100026000190190941693909304601f81018490048402820184019092528181529495949350908301828280156107875780601f1061075c57610100808354040283529160200191610787565b820191906000526020600020905b81548152906001019060200180831161076a57829003601f168201915b505050505090806004015490806005015490806006018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156108315780601f1061080657610100808354040283529160200191610831565b820191906000526020600020905b81548152906001019060200180831161081457829003601f168201915b5050506007909301549192505060ff1688565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061088b57805160ff19168380011785556108b8565b828001600101855582156108b8579182015b828111156108b857825182559160200191906001019061089d565b506108c49291506108c8565b5090565b6108e291905b808211156108c457600081556001016108ce565b9056fea165627a7a72305820f361b2461f65477ba7ad83b30228ed50e4dd7dc7569364d16ce26e1aab93afe60029",
+  "deployedBytecode": "0x6080604052600436106100565763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630e283d69811461005b5780634c0e5a4d146102b15780634c2bdd88146104a5575b600080fd5b34801561006757600080fd5b506102af600480360360c081101561007e57600080fd5b81019060208101813564010000000081111561009957600080fd5b8201836020820111156100ab57600080fd5b803590602001918460018302840111640100000000831117156100cd57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561012057600080fd5b82018360208201111561013257600080fd5b8035906020019184600183028401116401000000008311171561015457600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092959493602081019350359150506401000000008111156101a757600080fd5b8201836020820111156101b957600080fd5b803590602001918460018302840111640100000000831117156101db57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929584359560208601359591945092506060810191506040013564010000000081111561023a57600080fd5b82018360208201111561024c57600080fd5b8035906020019184600183028401116401000000008311171561026e57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506104cc945050505050565b005b3480156102bd57600080fd5b506102db600480360360208110156102d457600080fd5b50356105c9565b60405180898152602001806020018060200180602001888152602001878152602001806020018615151515815260200185810385528c818151815260200191508051906020019080838360005b83811015610340578181015183820152602001610328565b50505050905090810190601f16801561036d5780820380516001836020036101000a031916815260200191505b5085810384528b5181528b516020918201918d019080838360005b838110156103a0578181015183820152602001610388565b50505050905090810190601f1680156103cd5780820380516001836020036101000a031916815260200191505b5085810383528a5181528a516020918201918c019080838360005b838110156104005781810151838201526020016103e8565b50505050905090810190601f16801561042d5780820380516001836020036101000a031916815260200191505b50858103825287518152875160209182019189019080838360005b83811015610460578181015183820152602001610448565b50505050905090810190601f16801561048d5780820380516001836020036101000a031916815260200191505b509c5050505050505050505050505060405180910390f35b3480156104b157600080fd5b506104ba610844565b60408051918252519081900360200190f35b600080546001908101808355604080516101008101825282815260208082018c81528284018c9052606083018b9052608083018a905260a0830189905260c0830188905260e08301879052938652848152919094208451815591518051929361053d9390850192919091019061084a565b506040820151805161055991600284019160209091019061084a565b506060820151805161057591600384019160209091019061084a565b506080820151600482015560a0820151600582015560c082015180516105a591600684019160209091019061084a565b5060e091909101516007909101805460ff1916911515919091179055505050505050565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156106655780601f1061063a57610100808354040283529160200191610665565b820191906000526020600020905b81548152906001019060200180831161064857829003601f168201915b50505060028085018054604080516020601f60001961010060018716150201909416959095049283018590048502810185019091528181529596959450909250908301828280156106f75780601f106106cc576101008083540402835291602001916106f7565b820191906000526020600020905b8154815290600101906020018083116106da57829003601f168201915b5050505060038301805460408051602060026001851615610100026000190190941693909304601f81018490048402820184019092528181529495949350908301828280156107875780601f1061075c57610100808354040283529160200191610787565b820191906000526020600020905b81548152906001019060200180831161076a57829003601f168201915b505050505090806004015490806005015490806006018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156108315780601f1061080657610100808354040283529160200191610831565b820191906000526020600020905b81548152906001019060200180831161081457829003601f168201915b5050506007909301549192505060ff1688565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061088b57805160ff19168380011785556108b8565b828001600101855582156108b8579182015b828111156108b857825182559160200191906001019061089d565b506108c49291506108c8565b5090565b6108e291905b808211156108c457600081556001016108ce565b9056fea165627a7a72305820f361b2461f65477ba7ad83b30228ed50e4dd7dc7569364d16ce26e1aab93afe60029",
+  "sourceMap": "25:855:1:-;;;80:1;51:30;;363:158;8:9:-1;5:2;;;30:1;27;20:12;5:2;363:158:1;394:120;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;469:1;472;394:120;;;;;;;;;;;;;;;;;;;;;;;:14;;;:120;;;:::i;:::-;25:855;;527:351;711:14;:17;;;;;;;;;767:104;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;738:26;;;;;;;;;;:133;;;;;;;;:26;;:133;;;;;;;;;;;;:::i;:::-;-1:-1:-1;738:133:1;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;738:133:1;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;738:133:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;738:133:1;;;;;;;;;;;;-1:-1:-1;;738:133:1;;;;;;;;;;-1:-1:-1;;;;;;527:351:1:o;25:855::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;25:855:1;;;-1:-1:-1;25:855:1;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "25:855:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;527:351;;8:9:-1;5:2;;;30:1;27;20:12;5:2;527:351:1;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;527:351:1;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;527:351:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;527:351:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;527:351:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;527:351:1;;;;;;;;-1:-1:-1;527:351:1;;-1:-1:-1;;21:11;5:28;;2:2;;;46:1;43;36:12;2:2;527:351:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;527:351:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;527:351:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;527:351:1;;;;;;;;-1:-1:-1;527:351:1;;-1:-1:-1;;21:11;5:28;;2:2;;;46:1;43;36:12;2:2;527:351:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;527:351:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;527:351:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;527:351:1;;;;;;;;;;;;-1:-1:-1;527:351:1;-1:-1:-1;527:351:1;;;;-1:-1:-1;527:351:1;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;527:351:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;527:351:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;527:351:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;527:351:1;;-1:-1:-1;527:351:1;;-1:-1:-1;;;;;527:351:1;;;312:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;312:44:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;312:44:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;312:44:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;312:44:1;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;312:44:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;312:44:1;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;312:44:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;312:44:1;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;312:44:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;51:30;;8:9:-1;5:2;;;30:1;27;20:12;5:2;51:30:1;;;;;;;;;;;;;;;;;;;;527:351;711:14;:17;;;;;;;;;767:104;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;738:26;;;;;;;;;;:133;;;;;;;;:26;;:133;;;;;;;;;;;;:::i;:::-;-1:-1:-1;738:133:1;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;738:133:1;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;738:133:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;738:133:1;;;;;;;;;;;;-1:-1:-1;;738:133:1;;;;;;;;;;-1:-1:-1;;;;;;527:351:1:o;312:44::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;312:44:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;312:44:1;;;;;;;;;;;-1:-1:-1;;312:44:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;312:44:1;;-1:-1:-1;312:44:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;312:44:1;;;;;;;;;;;;;;;;-1:-1:-1;;312:44:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;312:44:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;312:44:1;;;;;;;-1:-1:-1;;312:44:1;;;:::o;51:30::-;;;;:::o;25:855::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;25:855:1;;;-1:-1:-1;25:855:1;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract Transacoes {\n    uint public qntdTransacoes = 0;\n\n    struct Transacao {\n        uint id;\n        string comprador;\n        string vendedor;\n        string produto;\n        uint preco;\n        uint quantidade;\n        string info_adicionais;\n        bool finalizada;\n    }\n\n    mapping(uint => Transacao) public transacoes;\n\n    constructor() public {\n        criarTransacao(\"Nome do Comprador\", \"Nome do Vendedor\", \"Nome do Produto\", 0, 0, \"Informações importantes adicionais\");\n    }\n\n    function criarTransacao(string memory _comprador, string memory _vendedor, string memory _produto, \n    uint _preco, uint _quantidade, string memory _info_adicionais) public {\n        qntdTransacoes ++;\n        transacoes[qntdTransacoes] = Transacao(qntdTransacoes, _comprador, _vendedor, _produto, _preco, _quantidade, _info_adicionais, false);\n    }\n}",
   "sourcePath": "/Users/giovannafilipakis/eth-produtos/contracts/Transacoes.sol",
   "ast": {
     "absolutePath": "/Users/giovannafilipakis/eth-produtos/contracts/Transacoes.sol",
     "exportedSymbols": {
       "Transacoes": [
-        42
+        110
       ]
     },
-    "id": 43,
+    "id": 111,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -50,9 +140,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 42,
+        "id": 110,
         "linearizedBaseContracts": [
-          42
+          110
         ],
         "name": "Transacoes",
         "nodeType": "ContractDefinition",
@@ -60,10 +150,10 @@
           {
             "constant": false,
             "id": 41,
-            "name": "taskCount",
+            "name": "qntdTransacoes",
             "nodeType": "VariableDeclaration",
-            "scope": 42,
-            "src": "51:25:1",
+            "scope": 110,
+            "src": "51:30:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -90,7 +180,7 @@
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "75:1:1",
+              "src": "80:1:1",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -99,22 +189,947 @@
               "value": "0"
             },
             "visibility": "public"
+          },
+          {
+            "canonicalName": "Transacoes.Transacao",
+            "id": 58,
+            "members": [
+              {
+                "constant": false,
+                "id": 43,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "115:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 42,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "115:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45,
+                "name": "comprador",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "132:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 44,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "132:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 47,
+                "name": "vendedor",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "158:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 46,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "158:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 49,
+                "name": "produto",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "183:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 48,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "183:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 51,
+                "name": "preco",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "207:10:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 50,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "207:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 53,
+                "name": "quantidade",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "227:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 52,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "227:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 55,
+                "name": "info_adicionais",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "252:22:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 54,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "252:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 57,
+                "name": "finalizada",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "284:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 56,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "284:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Transacao",
+            "nodeType": "StructDefinition",
+            "scope": 110,
+            "src": "88:218:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 62,
+            "name": "transacoes",
+            "nodeType": "VariableDeclaration",
+            "scope": 110,
+            "src": "312:44:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Transacao_$58_storage_$",
+              "typeString": "mapping(uint256 => struct Transacoes.Transacao)"
+            },
+            "typeName": {
+              "id": 61,
+              "keyType": {
+                "id": 59,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "320:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "312:26:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Transacao_$58_storage_$",
+                "typeString": "mapping(uint256 => struct Transacoes.Transacao)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 60,
+                "name": "Transacao",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 58,
+                "src": "328:9:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Transacao_$58_storage_ptr",
+                  "typeString": "struct Transacoes.Transacao"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 74,
+              "nodeType": "Block",
+              "src": "384:137:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f6d6520646f20436f6d707261646f72",
+                        "id": 66,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "409:19:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_285782c57404b8622bcb7d7a50cefb5727c14a4d6a7453af7d6279ec82ca7d0d",
+                          "typeString": "literal_string \"Nome do Comprador\""
+                        },
+                        "value": "Nome do Comprador"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f6d6520646f2056656e6465646f72",
+                        "id": 67,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "430:18:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_864c83cec99e9fc8fa5b42bc22b51b3a590fc1c02e8f4394826babfb44e66c00",
+                          "typeString": "literal_string \"Nome do Vendedor\""
+                        },
+                        "value": "Nome do Vendedor"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f6d6520646f2050726f6475746f",
+                        "id": 68,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "450:17:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_25a9d0cbaa0a4b619651fbf8a8294b4717e42f11e24fcec0e3c1bc556ba11a93",
+                          "typeString": "literal_string \"Nome do Produto\""
+                        },
+                        "value": "Nome do Produto"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 69,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "469:1:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 70,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "472:1:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "496e666f726d61c3a7c3b5657320696d706f7274616e7465732061646963696f6e616973",
+                        "id": 71,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "475:38:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_bc0f89a3aebfd94f008140df682dabb53aea4d9ae8b6eb64404b9ef5db2f9ad7",
+                          "typeString": "literal_string \"Informações importantes adicionais\""
+                        },
+                        "value": "Informações importantes adicionais"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_285782c57404b8622bcb7d7a50cefb5727c14a4d6a7453af7d6279ec82ca7d0d",
+                          "typeString": "literal_string \"Nome do Comprador\""
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_864c83cec99e9fc8fa5b42bc22b51b3a590fc1c02e8f4394826babfb44e66c00",
+                          "typeString": "literal_string \"Nome do Vendedor\""
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_25a9d0cbaa0a4b619651fbf8a8294b4717e42f11e24fcec0e3c1bc556ba11a93",
+                          "typeString": "literal_string \"Nome do Produto\""
+                        },
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_bc0f89a3aebfd94f008140df682dabb53aea4d9ae8b6eb64404b9ef5db2f9ad7",
+                          "typeString": "literal_string \"Informações importantes adicionais\""
+                        }
+                      ],
+                      "id": 65,
+                      "name": "criarTransacao",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 109,
+                      "src": "394:14:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory,string memory,string memory,uint256,uint256,string memory)"
+                      }
+                    },
+                    "id": 72,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "394:120:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 73,
+                  "nodeType": "ExpressionStatement",
+                  "src": "394:120:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 75,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "374:2:1"
+            },
+            "returnParameters": {
+              "id": 64,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "384:0:1"
+            },
+            "scope": 110,
+            "src": "363:158:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 108,
+              "nodeType": "Block",
+              "src": "701:177:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 91,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "711:17:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 90,
+                      "name": "qntdTransacoes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 41,
+                      "src": "711:14:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 92,
+                  "nodeType": "ExpressionStatement",
+                  "src": "711:17:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 106,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 93,
+                        "name": "transacoes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 62,
+                        "src": "738:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Transacao_$58_storage_$",
+                          "typeString": "mapping(uint256 => struct Transacoes.Transacao storage ref)"
+                        }
+                      },
+                      "id": 95,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 94,
+                        "name": "qntdTransacoes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 41,
+                        "src": "749:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "738:26:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Transacao_$58_storage",
+                        "typeString": "struct Transacoes.Transacao storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 97,
+                          "name": "qntdTransacoes",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 41,
+                          "src": "777:14:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 98,
+                          "name": "_comprador",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 77,
+                          "src": "793:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 99,
+                          "name": "_vendedor",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 79,
+                          "src": "805:9:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 100,
+                          "name": "_produto",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 81,
+                          "src": "816:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 101,
+                          "name": "_preco",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 83,
+                          "src": "826:6:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 102,
+                          "name": "_quantidade",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 85,
+                          "src": "834:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 103,
+                          "name": "_info_adicionais",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 87,
+                          "src": "847:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 104,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "865:5:1",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        ],
+                        "id": 96,
+                        "name": "Transacao",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 58,
+                        "src": "767:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Transacao_$58_storage_ptr_$",
+                          "typeString": "type(struct Transacoes.Transacao storage pointer)"
+                        }
+                      },
+                      "id": 105,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "767:104:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Transacao_$58_memory",
+                        "typeString": "struct Transacoes.Transacao memory"
+                      }
+                    },
+                    "src": "738:133:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Transacao_$58_storage",
+                      "typeString": "struct Transacoes.Transacao storage ref"
+                    }
+                  },
+                  "id": 107,
+                  "nodeType": "ExpressionStatement",
+                  "src": "738:133:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 109,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "criarTransacao",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 88,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 77,
+                  "name": "_comprador",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "551:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 76,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "551:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79,
+                  "name": "_vendedor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "577:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 78,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "577:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 81,
+                  "name": "_produto",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "602:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 80,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "602:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 83,
+                  "name": "_preco",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "631:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 82,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "631:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 85,
+                  "name": "_quantidade",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "644:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 84,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "644:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 87,
+                  "name": "_info_adicionais",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "662:30:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 86,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "662:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "550:143:1"
+            },
+            "returnParameters": {
+              "id": 89,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "701:0:1"
+            },
+            "scope": 110,
+            "src": "527:351:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "scope": 43,
-        "src": "25:54:1"
+        "scope": 111,
+        "src": "25:855:1"
       }
     ],
-    "src": "0:79:1"
+    "src": "0:880:1"
   },
   "legacyAST": {
     "absolutePath": "/Users/giovannafilipakis/eth-produtos/contracts/Transacoes.sol",
     "exportedSymbols": {
       "Transacoes": [
-        42
+        110
       ]
     },
-    "id": 43,
+    "id": 111,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -134,9 +1149,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 42,
+        "id": 110,
         "linearizedBaseContracts": [
-          42
+          110
         ],
         "name": "Transacoes",
         "nodeType": "ContractDefinition",
@@ -144,10 +1159,10 @@
           {
             "constant": false,
             "id": 41,
-            "name": "taskCount",
+            "name": "qntdTransacoes",
             "nodeType": "VariableDeclaration",
-            "scope": 42,
-            "src": "51:25:1",
+            "scope": 110,
+            "src": "51:30:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -174,7 +1189,7 @@
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "75:1:1",
+              "src": "80:1:1",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -183,13 +1198,938 @@
               "value": "0"
             },
             "visibility": "public"
+          },
+          {
+            "canonicalName": "Transacoes.Transacao",
+            "id": 58,
+            "members": [
+              {
+                "constant": false,
+                "id": 43,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "115:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 42,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "115:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45,
+                "name": "comprador",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "132:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 44,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "132:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 47,
+                "name": "vendedor",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "158:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 46,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "158:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 49,
+                "name": "produto",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "183:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 48,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "183:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 51,
+                "name": "preco",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "207:10:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 50,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "207:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 53,
+                "name": "quantidade",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "227:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 52,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "227:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 55,
+                "name": "info_adicionais",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "252:22:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 54,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "252:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 57,
+                "name": "finalizada",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "284:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 56,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "284:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Transacao",
+            "nodeType": "StructDefinition",
+            "scope": 110,
+            "src": "88:218:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 62,
+            "name": "transacoes",
+            "nodeType": "VariableDeclaration",
+            "scope": 110,
+            "src": "312:44:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Transacao_$58_storage_$",
+              "typeString": "mapping(uint256 => struct Transacoes.Transacao)"
+            },
+            "typeName": {
+              "id": 61,
+              "keyType": {
+                "id": 59,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "320:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "312:26:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Transacao_$58_storage_$",
+                "typeString": "mapping(uint256 => struct Transacoes.Transacao)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 60,
+                "name": "Transacao",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 58,
+                "src": "328:9:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Transacao_$58_storage_ptr",
+                  "typeString": "struct Transacoes.Transacao"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 74,
+              "nodeType": "Block",
+              "src": "384:137:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f6d6520646f20436f6d707261646f72",
+                        "id": 66,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "409:19:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_285782c57404b8622bcb7d7a50cefb5727c14a4d6a7453af7d6279ec82ca7d0d",
+                          "typeString": "literal_string \"Nome do Comprador\""
+                        },
+                        "value": "Nome do Comprador"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f6d6520646f2056656e6465646f72",
+                        "id": 67,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "430:18:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_864c83cec99e9fc8fa5b42bc22b51b3a590fc1c02e8f4394826babfb44e66c00",
+                          "typeString": "literal_string \"Nome do Vendedor\""
+                        },
+                        "value": "Nome do Vendedor"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f6d6520646f2050726f6475746f",
+                        "id": 68,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "450:17:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_25a9d0cbaa0a4b619651fbf8a8294b4717e42f11e24fcec0e3c1bc556ba11a93",
+                          "typeString": "literal_string \"Nome do Produto\""
+                        },
+                        "value": "Nome do Produto"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 69,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "469:1:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 70,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "472:1:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "496e666f726d61c3a7c3b5657320696d706f7274616e7465732061646963696f6e616973",
+                        "id": 71,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "475:38:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_bc0f89a3aebfd94f008140df682dabb53aea4d9ae8b6eb64404b9ef5db2f9ad7",
+                          "typeString": "literal_string \"Informações importantes adicionais\""
+                        },
+                        "value": "Informações importantes adicionais"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_285782c57404b8622bcb7d7a50cefb5727c14a4d6a7453af7d6279ec82ca7d0d",
+                          "typeString": "literal_string \"Nome do Comprador\""
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_864c83cec99e9fc8fa5b42bc22b51b3a590fc1c02e8f4394826babfb44e66c00",
+                          "typeString": "literal_string \"Nome do Vendedor\""
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_25a9d0cbaa0a4b619651fbf8a8294b4717e42f11e24fcec0e3c1bc556ba11a93",
+                          "typeString": "literal_string \"Nome do Produto\""
+                        },
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_bc0f89a3aebfd94f008140df682dabb53aea4d9ae8b6eb64404b9ef5db2f9ad7",
+                          "typeString": "literal_string \"Informações importantes adicionais\""
+                        }
+                      ],
+                      "id": 65,
+                      "name": "criarTransacao",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 109,
+                      "src": "394:14:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory,string memory,string memory,uint256,uint256,string memory)"
+                      }
+                    },
+                    "id": 72,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "394:120:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 73,
+                  "nodeType": "ExpressionStatement",
+                  "src": "394:120:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 75,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "374:2:1"
+            },
+            "returnParameters": {
+              "id": 64,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "384:0:1"
+            },
+            "scope": 110,
+            "src": "363:158:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 108,
+              "nodeType": "Block",
+              "src": "701:177:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 91,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "711:17:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 90,
+                      "name": "qntdTransacoes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 41,
+                      "src": "711:14:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 92,
+                  "nodeType": "ExpressionStatement",
+                  "src": "711:17:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 106,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 93,
+                        "name": "transacoes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 62,
+                        "src": "738:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Transacao_$58_storage_$",
+                          "typeString": "mapping(uint256 => struct Transacoes.Transacao storage ref)"
+                        }
+                      },
+                      "id": 95,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 94,
+                        "name": "qntdTransacoes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 41,
+                        "src": "749:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "738:26:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Transacao_$58_storage",
+                        "typeString": "struct Transacoes.Transacao storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 97,
+                          "name": "qntdTransacoes",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 41,
+                          "src": "777:14:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 98,
+                          "name": "_comprador",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 77,
+                          "src": "793:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 99,
+                          "name": "_vendedor",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 79,
+                          "src": "805:9:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 100,
+                          "name": "_produto",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 81,
+                          "src": "816:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 101,
+                          "name": "_preco",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 83,
+                          "src": "826:6:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 102,
+                          "name": "_quantidade",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 85,
+                          "src": "834:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 103,
+                          "name": "_info_adicionais",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 87,
+                          "src": "847:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 104,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "865:5:1",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        ],
+                        "id": 96,
+                        "name": "Transacao",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 58,
+                        "src": "767:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Transacao_$58_storage_ptr_$",
+                          "typeString": "type(struct Transacoes.Transacao storage pointer)"
+                        }
+                      },
+                      "id": 105,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "767:104:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Transacao_$58_memory",
+                        "typeString": "struct Transacoes.Transacao memory"
+                      }
+                    },
+                    "src": "738:133:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Transacao_$58_storage",
+                      "typeString": "struct Transacoes.Transacao storage ref"
+                    }
+                  },
+                  "id": 107,
+                  "nodeType": "ExpressionStatement",
+                  "src": "738:133:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 109,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "criarTransacao",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 88,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 77,
+                  "name": "_comprador",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "551:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 76,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "551:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79,
+                  "name": "_vendedor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "577:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 78,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "577:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 81,
+                  "name": "_produto",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "602:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 80,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "602:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 83,
+                  "name": "_preco",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "631:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 82,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "631:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 85,
+                  "name": "_quantidade",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "644:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 84,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "644:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 87,
+                  "name": "_info_adicionais",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "662:30:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 86,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "662:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "550:143:1"
+            },
+            "returnParameters": {
+              "id": 89,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "701:0:1"
+            },
+            "scope": 110,
+            "src": "527:351:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "scope": 43,
-        "src": "25:54:1"
+        "scope": 111,
+        "src": "25:855:1"
       }
     ],
-    "src": "0:79:1"
+    "src": "0:880:1"
   },
   "compiler": {
     "name": "solc",
@@ -199,12 +2139,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x1C8016Ab799Ae3e69007a976E99553602da99FEb",
-      "transactionHash": "0xa41bd21fa8a9fc439d23da100b0df9c29d95808f76fdbcb131fd92955bb393bb"
+      "address": "0xBE640a23257DfbCBF15A41a5a9457733961782b5",
+      "transactionHash": "0x6e95f30341592e52296267d88950a681ec73a9ddc22f731599e19b5b74a07bfa"
     }
   },
   "schemaVersion": "3.0.1",
-  "updatedAt": "2020-06-11T20:24:48.907Z",
+  "updatedAt": "2020-06-12T02:45:15.594Z",
   "devdoc": {
     "methods": {}
   },
