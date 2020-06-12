@@ -122,6 +122,20 @@ App = {
             $newTaskTemplate.show()
         }
     },
+
+    criarTransacao: async () => {
+        App.setLoading(true)
+        const vendedor = $('#novaTransacao_Vendedor').val()
+        const comprador = $('#novaTransacao_Comprador').val()
+        const produto = $('#novaTransacao_Produto').val()
+        const preco = $('#novaTransacao_Preco').val()
+        const quantidade = $('#novaTransacao_Quantidade').val()
+        const info_adicionais = $('#novaTransacao_Info').val()
+        
+        await App.transacoes.criarTransacao(vendedor, comprador, produto, preco,
+            quantidade, info_adicionais)
+        window.location.reload()
+    },
     
     setLoading: (boolean) => {
         App.loading = boolean
