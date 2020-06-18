@@ -47,7 +47,8 @@ App = {
     
     loadAccount: async () => {
         // Set the current blockchain account
-        App.account = web3.eth.accounts[0]
+        // App.account = web3.eth.accounts[0]    
+        App.account = '0x2F5239FAD8b4c4DD781FBA5b5BBe0aae3eB80b44'
     },
 
     loadContract: async () => {
@@ -90,10 +91,11 @@ App = {
             const transacao = await App.transacoes.transacoes(i)
             const id = transacao[0].toNumber()
             const comprador = transacao[1]
-            const vendedor = transacao[2]
-            const produto = transacao[3]
+            const produto = transacao[2]
+            const unidade = transacao[3]
             const preco = transacao[4].toNumber()
             const quantidade = transacao[5].toNumber()
+            const total = preco*quantidade
             const info_adicionais = transacao[6]
             const finalizada = transacao[7]
 
@@ -101,10 +103,11 @@ App = {
             const $newTaskTemplate = $taskTemplate.clone()
             $newTaskTemplate.find('.id').html(id)
             $newTaskTemplate.find('.comprador').html(comprador)
-            $newTaskTemplate.find('.vendedor').html(vendedor)
             $newTaskTemplate.find('.produto').html(produto)
-            $newTaskTemplate.find('.preco').html(preco)
+            $newTaskTemplate.find('.unidade').html(unidade)
+            $newTaskTemplate.find('.preco').html("R$"+preco)
             $newTaskTemplate.find('.quantidade').html(quantidade)
+            $newTaskTemplate.find('.total').html("R$"+total)
             $newTaskTemplate.find('.info_adicionais').html(info_adicionais)
             $newTaskTemplate.find('.button').html("<button id='"+id+"'  class='btn btn-success' type='button'>Finalizar</button>")
             $newTaskTemplate.find('button')
@@ -126,14 +129,14 @@ App = {
 
     criarTransacao: async () => {
         App.setLoading(true)
-        const vendedor = $('#novaTransacao_Vendedor').val()
         const comprador = $('#novaTransacao_Comprador').val()
         const produto = $('#novaTransacao_Produto').val()
+        const unidade = $('#novaTransacao_Unidade').val()
         const preco = $('#novaTransacao_Preco').val()
         const quantidade = $('#novaTransacao_Quantidade').val()
         const info_adicionais = $('#novaTransacao_Info').val()
         
-        await App.transacoes.criarTransacao(vendedor, comprador, produto, preco,
+        await App.transacoes.criarTransacao(comprador, produto, unidade, preco,
             quantidade, info_adicionais)
         window.location.reload()
     },

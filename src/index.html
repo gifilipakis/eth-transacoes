@@ -31,6 +31,10 @@
         display: flex;
     }
 
+    .form-control {
+        margin: 0 2.5px;
+    }
+
     #transacoes, #transacoesFinalizadas {
         width: 100%;
         margin: 20px 0;
@@ -72,10 +76,20 @@
             </div>
             <div id="content">
                 <form onSubmit="App.criarTransacao(); return false;">
-                <input id="novaTransacao_Vendedor" type="text" class="form-control" placeholder="Vendedor..." required>
                 <input id="novaTransacao_Comprador" type="text" class="form-control" placeholder="Comprador..." required>
-                <input id="novaTransacao_Produto" type="text" class="form-control" placeholder="Produto..." required>
-                <input id="novaTransacao_Preco" type="number" class="form-control" placeholder="Preço..." required>
+                <select id="novaTransacao_Produto" class="form-control" required>
+                    <option value="" selected>Selecione o produto</option>
+                    <option value='Açaí'>Açaí</option>
+                    <option value='Banana Nanica'>Banana Nanica</option>
+                    <option value='Poupa de Fruta'>Poupa de Fruta</option>
+                </select>
+                <select id="novaTransacao_Unidade" class="form-control" required>
+                    <option value="" selected>Selecione a unidade de medida</option>
+                    <option value='Kg'>Kg</option>
+                    <option value='Lt'>Lt</option>
+                    <option value='Unidade'>Unidade</option>
+                </select>
+                <input id="novaTransacao_Preco" type="number" class="form-control" placeholder="Preço por unidade..." required>
                 <input id="novaTransacao_Quantidade" type="number" class="form-control" placeholder="Quantidade..." required>
                 <input id="novaTransacao_Info" type="text" class="form-control" placeholder="Informações Adicionais..." required>
                 <input type="submit" class="btn btn-success">
@@ -84,11 +98,12 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Vendedor</th>
                             <th>Comprador</th>
                             <th>Produto</th>
-                            <th>Preço</th>
+                            <th>Unidade</th>
+                            <th>Preço por Unidade</th>
                             <th>Quantidade</th>
+                            <th>Total</th>
                             <th>Informações Adicionais</th>
                             <th></th>
                         </tr>
@@ -97,10 +112,11 @@
                         <tr class="taskTemplate">
                             <td class="id"></td>
                             <td class="comprador"></td>
-                            <td class="vendedor"></td>
                             <td class="produto"></td>
+                            <td class="unidade"></td>
                             <td class="preco"></td>
                             <td class="quantidade"></td>
+                            <td class="total"></td>
                             <td class="info_adicionais"></td>
                             <td class='button'></td>
                         </tr>
@@ -111,11 +127,12 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Vendedor</th>
                             <th>Comprador</th>
                             <th>Produto</th>
-                            <th>Preço</th>
+                            <th>Unidade</th>
+                            <th>Preço por Unidade</th>
                             <th>Quantidade</th>
+                            <th>Total</th>
                             <th>Informações Adicionais</th>
                             <th></th>
                         </tr>
@@ -124,10 +141,11 @@
                         <tr>
                             <td class="id"></td>
                             <td class="comprador"></td>
-                            <td class="vendedor"></td>
                             <td class="produto"></td>
+                            <td class="unidade"></td>
                             <td class="preco"></td>
                             <td class="quantidade"></td>
+                            <td class="total"></td>
                             <td class="info_adicionais"></td>
                             <td class='button'></td>
                         </tr>
